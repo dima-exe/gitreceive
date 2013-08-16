@@ -64,7 +64,7 @@ EOF
     do
       # Only run this script for the master branch. You can remove this 
       # if block if you wish to run it for others as well.
-      if [[ $refname = "refs/heads/master" ]] ; then
+      # if [[ $refname = "refs/heads/master" ]] ; then
  
         git archive $newrev | $GITHOME/receiver "$RECEIVE_REPO" "$newrev" "$RECEIVE_USER" "$RECEIVE_FINGERPRINT"  
  
@@ -73,7 +73,7 @@ EOF
           echo "      ERROR: failed on rev $newrev - push denied"
           exit $rc
         fi
-      fi
+      # fi
     done
     #exit 1 # for debugging
     ;;
